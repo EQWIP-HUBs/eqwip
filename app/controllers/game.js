@@ -24,8 +24,8 @@ export default Ember.Controller.extend({
     answerQuestion(impact) {
       this.setImpact(impact)
 
-      var nextMonth = this.get('month') + 1
-      this.set('month', nextMonth)
+      //var nextMonth = this.get('month') + 1
+      //this.set('month', nextMonth)
     },
 
     startGameClicked: function() {
