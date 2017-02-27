@@ -21,7 +21,7 @@ export default Ember.Component.extend({
   tuoZaafiRegex: /tuo zaafi/i,
   bribeRegex: /Offer the officer a ₵150 bribe|Offer a ₵150 bribe/i,
   creditProRegex: /very difficult for female entrepreneurs to access credit through formal financial institutions in Northern Ghana/i,
-  accraRegex:/  Accra -Not working/i, // pending
+  accraRegex:/  Accra/i, // pending
   bootCampRegex:/Enroll in a coding bootcamp/i,
   codeSchoolRegex: /The Code School/i,
   floodAccraRegex: /major floods sweep across Accra/i,
