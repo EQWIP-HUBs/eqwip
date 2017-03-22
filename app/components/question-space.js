@@ -493,7 +493,7 @@ export default Ember.Component.extend({
             text: "<b>Hire a Motorking driver to make weekly collections in Awoshie, at least until RWS can be convinced to expand their service area. (₵80 per week).</b>",
             resultText: "Adding a Motorking driver to the monthly payroll won’t be easy, but Kojo thinks that a rapid expansion into Awoshie will impress potential investors.<br><br> By the end of the month, Kojo manages to secure 10 new clients, most of which are using the app on a regular basis.",
             impact: {
-              income: 80,
+              income: 100,
               resilience: 2,
             },
           },
