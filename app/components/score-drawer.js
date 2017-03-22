@@ -54,7 +54,7 @@ export default Ember.Component.extend({
     };
 
     if (character == 'Kojo') {
-      return 6
+      return 5
     };
   }),
 
@@ -70,7 +70,7 @@ export default Ember.Component.extend({
     };
 
     if (character == 'Kojo') {
-      return -4
+      return -5
     };
   }),
 
