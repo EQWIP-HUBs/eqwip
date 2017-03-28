@@ -4,6 +4,13 @@ export default Ember.Component.extend({
   character: null,
   assetsArray: [],
   classNames: ["flexBlock flexVertical"],
+  isShowingGetInvolved: false,
+
+  actions: {
+    howToGetInvolved: function(){
+      this.toggleProperty('isShowingGetInvolved')
+    }
+  },
 
   environmentText: Ember.computed('character', function() {
     if (this.get('environmentLow')) {
