@@ -13,25 +13,25 @@
   {{#modal-dialog close='aboutGhana' translucentOverlay=true targetAttachment='none' container-class='centered-scrolling-container card flexBlock flexVertical modalShit modalFadeIn' overlay-class='centered-scrolling-overlay' wrapper-class='centered-scrolling-wrapper'}}
     <p class="u-colorBlueDark u-textLarger">Ghana</p>
 
-    <p class="u-textLeft">Ghana is a multicultural nation of some 27 million people, located along the Gulf of Guinea and the Atlantic Ocean in West Africa. Over the past two decades, Ghana's economy has grown to become one of the strongest and most diversified in Africa. This growth has significantly reduced the level of poverty in the region — according to the World Bank, the poverty level has dropped from 51 percent in 1991 to its current level of about 24 percent.</p>
+    <p class="u-textLeft">Ghana is a multicultural nation of over <a href="http://www.worldometers.info/world-population/ghana-population/" target="_blank">29 million people</a>, located along the Gulf of Guinea and the Atlantic Ocean in West Africa. Over the past two decades, Ghana's economy has grown to become one of the strongest and most diversified in Africa. This growth has significantly reduced the level of poverty in the region. According to the <a href="http://www.worldbank.org/en/country/ghana/publication/poverty-reduction-ghana-progress-challenges" target="_blank"> World Bank</a>, the poverty level in Ghana has been cut in half over the last two decades, however, due to growing inequality between regions and other economic challenges this trend is stagnating.</p>
 
-    <p class="u-textLeft">Young people between the ages of 15 and 24 make up close to 20 percent of the Ghana population. Though Ghana’s youth are attaining higher levels of education than ever before, their participation in labor markets has been in decline. It is estimated that the youth unemployment rate is 14.9 percent.</p>
+    <p class="u-textLeft">Young people between the ages of 15 and 24 make up close to <a href="https://www.indexmundi.com/ghana/demographics_profile.html" target="_blank">19 percent of the Ghana population.</a> Though Ghana’s youth are attaining higher levels of education than ever before, their participation in labor markets has been in decline. According the 2015 Ghana Labour Survey Report <a href="https://www.graphic.com.gh/features/features/tackling-ghana-s-youth-unemployment.html" target="_blank">26% of youth are unemployed</a>.</p>
 
     <p class="u-colorBlueDark u-textLarger">Tamale</p>
 
-    <p class="u-textLeft">Tamale is the third largest city in Ghana, and the capital of the country’s Northern Region. Historically formed around an important trade crossroad, Tamale has in recent years experienced a high degree development, which has produced a new stadium and an international airport.</p>
+    <p class="u-textLeft">Tamale is the third largest city in Ghana, and the capital of the country’s Northern Region. Historically formed around an important trade crossroad, Tamale has in recent years experienced a high degree of development, which has produced a new stadium and an international airport.</p>
 
     <p class="u-textLeft">In Tamale, the informal business sector is by far the largest employer. Indeed, self-employment and small business entrepreneurship is very popular, and on the rise, especially among young women. Other important sources of employment in Tamale include agriculture, services and sales, crafts, the nonprofit sector, and the government.</p>
 
     <p class="u-colorBlueDark u-textLarger">Accra</p>
 
-    <p class="u-textLeft">A sprawling metropolis of approximately 2,291,352 residents, Accra is the capital of Ghana, and its administrative, economic, and educational center. Accra’s primary economic activities are financial and government services, communications, construction, transport, and agriculture. The city is also home to over 70% of the country’s manufacturing capacity.</p>
+    <p class="u-textLeft">Accra is the capital of Ghana, and its administrative, economic, and educational center. Accra and its greater area make up a sprawling metropolis of over<a href="http://www.ghana.gov.gh/index.php/about-ghana/regions/greater-accra" target="_blank"> 4 million residents</a>. Accra’s primary economic activities are financial and government services, communications, construction, transport, and agriculture. The city is also home to about two thirds of the country’s manufacturing capacity.</p>
 
-    <p class="u-textLeft">Though Accra is one of the wealthiest and most modern cities on the African continent, it is also beset by problems that include congestion, pollution, and poverty. Youth unemployment is a major problem in the capital, with an estimated 30% unemployment rate for people between the ages of 15 and 24.</p>
+    <p class="u-textLeft">Though Accra is one of the wealthiest and most modern cities on the African continent, it is also beset by problems that include congestion, pollution, and poverty. Like elsewhere in Ghana, youth unemployment is a major problem in the capital.</p>
 
     <p class="u-colorBlueDark u-textLarger">Northern Ghana</p>
 
-    <p class="u-textLeft">In general, the Northern Region of Ghana is less populated and urbanized compared the most parts of the country, and has also experienced lesser rate of growth and prosperity. Youth between the ages of 20 and 35 in this region make up about 25% of the total population. Among youth in the Northern Region, there currently exists lower levels of education and literacy compared to the general population, and a significant gap in these levels between men and women.</p>
+    <p class="u-textLeft">In general, the Northern Region of Ghana is less populated and urbanized compared the most parts of the country, and has also experienced lesser rate of growth and prosperity. Among youth in the Northern Region, there currently exists lower levels of education and literacy compared to the general population, and a significant gap in these levels between men and women.</p>
       <div class="button button--blue" {{action 'aboutGhana'}}>
         Got it
       </div>
@@ -40,7 +40,7 @@
 
 
 {{#if isShowingHowToPlayModal}}
-  {{#modal-dialog close='howToPlayDialog' translucentOverlay=true targetAttachment='none' container-class='centered-scrolling-container card flexBlock flexVertical modalShit modalFadeIn' overlay-class='centered-scrolling-overlay' wrapper-class='centered-scrolling-wrapper'}}
+  {{#modal-dialog close='howToPlayDialog' translucentOverlay=true targetAttachment='none' container-class='centered-scrolling-container card flexBlock flexVertical modalShit modalFadeIn ib-container' overlay-class='centered-scrolling-overlay' wrapper-class='centered-scrolling-wrapper'}}
       <p class="u-colorBlueDark u-textLarger">How To Play</p>
       <p class="u-textLeft">
         As a young Ghanaian, your goal is to build a business that will be both profitable and sustainable. Over the course of 12 months, you will face a series of challenges, each of which will require tough decisions that will impact your business and your personal life. It won’t be easy, but as a driven and passionate entrepreneur, you’re up for the task, and down for the adventure!
@@ -71,7 +71,7 @@
         Make sure to monitor these indicators, and change your decisions accordingly. You can click on each of the indicators at any time during the simulation for more information.  At the end of the game, you will get a report on your progress.  
       </p>
       <p class="u-textLeft">
-        You are ready to start the game!  Choose your character, and get EQWIP’d!
+        You are ready to start the game!  <b>Choose your character, and begin your entrepreneurial journey!</b>
       </p>
       <div class="button button--blue" {{action 'howToPlayDialog'}}>
         Got it
@@ -80,16 +80,29 @@
 {{/if}}
 
 {{#if isShowingAboutUs}}
-  {{#modal-dialog close='aboutUs' translucentOverlay=true targetAttachment='none' container-class='centered-scrolling-container card flexBlock flexVertical modalShit modalFadeIn' overlay-class='centered-scrolling-overlay' wrapper-class='centered-scrolling-wrapper'}}
+  {{#modal-dialog close='aboutUs' translucentOverlay=true targetAttachment='none' container-class='centered-scrolling-container card flexBlock flexVertical modalShit modalFadeIn ib-container' overlay-class='centered-scrolling-overlay' wrapper-class='centered-scrolling-wrapper'}}
     <div class="align-center u-marginBottomSmall u-textCenter">
       <img src="/assets/images/eqwip-new-logo.png" class="about-logo" style="height:100px;"  />
       <img src="/assets/images/acgc-new-logo.png" class="about-logo" style="height:100px" />
     </div>
+    <!--
     <p>EQWIP’d: Ghana was developed in partnership by the Alberta Council for Global Cooperation and EQWIP HUBs — an initiative powered by Canada World Youth (CWY) and Youth Challenge International.</p>
 
     <p>The Alberta Council for Global Cooperation (ACGC) is a coalition of voluntary sector organizations located in Alberta, working locally and globally to achieve sustainable human development. We are committed to international cooperation that is people-centred, democratic, just, inclusive, and respectful of the environment and indigenous cultures. We work towards ending poverty and achieving a peaceful and healthy world, with dignity and full participation for all.</p>
 
     <p>EQWIP HUBs are dynamic innovation spaces spanning 17 urban centers across Bolivia, Ghana, Indonesia, Peru, Senegal, and Tanzania. Buzzing with collaborative energy, each EQWIP HUB provides a unique platform for young minds – especially women – to build market-relevant skills, gain access to the mentorship, networks, technology and capital to prepare them for meaningful employment, or to launch a new wave of enterprise. Qualified and passionate young Canadians will work in specialized teams to support each EQWIP HUB, fuelling cross-cultural innovation, gender responsive programming and peer-to-peer mentorship. </p>
+    -->
+      
+    <p><i><b>EQWIP HUBs: An Entrepreneur's Journey</b> was developed in partnership by the Alberta Council for Global Cooperation and EQWIP HUBs — a sustainable livelihoods project powered by Canada World Youth (CWY) and Youth Challenge International (YCI).</i></p>
+
+    <p><i>The Alberta Council for Global Cooperation (ACGC) is a coalition of voluntary sector organizations located in Alberta, working locally and globally to achieve sustainable human development. We are committed to international cooperation that is people-centred, democratic, just, inclusive, and respectful of the environment and indigenous cultures. We work towards ending poverty and achieving a peaceful and healthy world, with dignity and full participation for all.</i></p>
+
+    <p><i>The EQWIP HUBs project is a global network that connects Canadian volunteers, youth participants, and international partners to help young women and men to grow into their full potential. Through 18 knowledge centres in Bolivia, Ghana, Indonesia, Peru, Senegal and Tanzania, EQWIP HUBs offers entrepreneurship and employment training so that young people, especially women, can come together to gain market-relevant skills and learn from mentors. Our youth focused, collaborative and tech-friendly approach is unique. By working in partnership with global peers – we can create a better future for all.</i></p>
+
+    <p><i>Together, we’re on a mission to change the lives of 100,000 youth by 2020.</i></p>
+
+
+
       <div class="button button--blue" {{action 'aboutUs'}}>
         Got it
       </div>

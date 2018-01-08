@@ -130,6 +130,11 @@
         {{~{partial.content}~}}
       </span>
     {{~/if}}
+    {{~#if partial.modelType ~}}
+      <span {{action 'renderModal' partial.modelType bubbles=false}} class='modalLink u-colorBlue'>
+        {{~{partial.content}~}}
+      </span>
+    {{~/if}}
   {{~else~}}
       <span style="white-space: pre-line">
         {{~{partial.content}~}}

@@ -21,7 +21,7 @@ export default Ember.Component.extend({
   tuoZaafiRegex: /tuo zaafi/i,
   bribeRegex: /Offer the officer a ₵150 bribe|Offer a ₵150 bribe/i,
   creditProRegex: /very difficult for female entrepreneurs to access credit through formal financial institutions in Northern Ghana/i,
-  accraRegex:/  Accra/i, // pending
+  accraRegex:/  Accra/i, //pending
   bootCampRegex:/Enroll in a coding bootcamp/i,
   codeSchoolRegex: /The Code School/i,
   floodAccraRegex: /major floods sweep across Accra/i,
@@ -30,7 +30,12 @@ export default Ember.Component.extend({
   launchTraningRegex: /she's ready to launch the vocational training component of her business/i,
   crunchesNumberRegex: /She crunches the numbers/i,
   renderDialog: null,
-
+  newRegexAdded : {
+    familyOfFarmers: {
+      regex : /guinea  fowl  chicks/i,
+      modelText : 'Guinea fowl is a species of bird indigenous to Africa. Lean, nutritious, and rich in fatty acids, guinea fowl is an extremely popular bird in Ghana, and a favorite at roadside barbecue stands and upscale restaurants. Raising guinea fowl is also a relatively low-maintenance gig, when it comes to livestock. <br><br> The average guinea fowl also produces 55 to 100 eggs per year.'
+    }
+  },
   partials: Ember.computed('inputText', function(){
     let inputText = this.get('inputText');
 
@@ -38,86 +43,116 @@ export default Ember.Component.extend({
       return [];
     }
 
-
     inputText = this.addSusuMarkdown(inputText);
 
     let partialStrings = inputText.split(this.get('susuIndicator'));
 
     partialStrings = partialStrings.map((string) => {
-      return string.split("#GUINEA#")
-    })
+      return string.split("#GUINEA#");
+    });
 
     var flattened = [].concat.apply([], partialStrings);
 
     flattened = flattened.map((string) => {
-      return string.split("#EQWIP#")
-    })
+      return string.split("#EQWIP#");
+    });
 
     flattened = [].concat.apply([], flattened);
 
     flattened = flattened.map((string) => {
-      return string.split("#INVEST#")
-    })
+      return string.split("#INVEST#");
+    });
 
     flattened = [].concat.apply([], flattened);
 
     flattened = flattened.map((string) => {
-      return string.split("#SERVICE#")
-    })
+      return string.split("#SERVICE#");
+    });
 
     flattened = [].concat.apply([], flattened);
 
     flattened = flattened.map((string) => {
-      return string.split("#MOTOR#")
-    })
+      return string.split("#MOTOR#");
+    });
 
     flattened = [].concat.apply([], flattened);
 
     flattened = flattened.map((string) => {
-      return string.split("#COMPUTER#")
-    })
+      return string.split("#COMPUTER#");
+    });
 
     flattened = [].concat.apply([], flattened);
 
     flattened = flattened.map((string) => {
-      return string.split("#TRAVEL#")
-    })
+      return string.split("#TRAVEL#");
+    });
 
     flattened = [].concat.apply([], flattened);
 
     flattened = flattened.map((string) => {
-      return string.split("#WHATSAPP#")
-    })
+      return string.split("#WHATSAPP#");
+    });
 
     flattened = [].concat.apply([], flattened);
 
     flattened = flattened.map((string) => {
-      return string.split("#GORO#")
-    })
+      return string.split("#GORO#");
+    });
 
     flattened = [].concat.apply([], flattened);
 
     flattened = flattened.map((string) => {
-      return string.split("#NORSE#")
-    })
+      return string.split("#NORSE#");
+    });
 
     flattened = [].concat.apply([], flattened);
 
     var modelKeyName = ["#TAMALE#","#EQWIPHUB#","#ANDMORE#","#YAM#","#TUAZAAFI#",
                         "#CREDITPRO#","#BRIBE#","#ACCRA#","#BOOTCAMP#","#CODESCHOOL#",
-                        "#FLOODACCRA#","#EQWIPHUBNETWORK#","#LAUNCHTRANING#","#EQWIPHUBCLAB#"
-                        ,"#CRUNCHESNUMBER#"];
+                        "#FLOODACCRA#","#EQWIPHUBNETWORK#","#LAUNCHTRANING#","#EQWIPHUBCLAB#",
+                        "#CRUNCHESNUMBER#"];
+
+
+    //Adding Newly added Model Key
+    let tempVariable = this.get('newRegexAdded');
+    for (let key in tempVariable) {
+      modelKeyName.push('#'+key.toUpperCase()+'#');
+    }
+
+    //console.log('Model Key')
+    //console.log(modelKeyName);
 
     for (var i = 0; i < modelKeyName.length; i++) {
       flattened = flattened.map((string) => {
-        return string.split(modelKeyName[i])
-      })
+        return string.split(modelKeyName[i]);
+      });
       flattened = [].concat.apply([], flattened);
     }
 
+
     return flattened.map((string) => {
-      return {
+
+      //console.log(Ember.assign({custom:'custom'}, this.get('newRegexAdded')));
+
+      let newMapObj = {};
+      let linkableStatus = false;
+      let modelType = false;
+
+      //Adding Newly added Model Key
+      let tempVariable = this.get('newRegexAdded');
+      for (let key in tempVariable) {
+        let capitalizedKey = key[0].toUpperCase() + key.slice(1);
+        let searchStatus = tempVariable[key]['regex'].test(string);
+        newMapObj['is'+capitalizedKey] = searchStatus;
+        linkableStatus = linkableStatus || searchStatus;
+        if(searchStatus){
+          modelType = key;
+        }
+      }
+
+      return Ember.assign(newMapObj,{
         content: string,
+        modelType: modelType,
         isSusu: this.get('susuRegex').test(string),
         isGuinea: this.get('guineaRegex').test(string),
         isEqwip: this.get('eqwipRegex').test(string),
@@ -169,8 +204,9 @@ export default Ember.Component.extend({
           this.get('eqwipHubCLabRegex').test(string) ||
           this.get('launchTraningRegex').test(string) ||
           this.get('crunchesNumberRegex').test(string) ||
-          this.get('eqwipHubRegex').test(string) 
-      };
+          this.get('eqwipHubRegex').test(string) ||
+          linkableStatus
+      });
     });
   }),
 
@@ -245,12 +281,27 @@ export default Ember.Component.extend({
         return "#"+regexToKey[x]+"#" + s + "#"+regexToKey[x]+"#";
       });
     }
-    return text
+
+
+    //Adding Newly added Model Key
+    let tempVariable = this.get('newRegexAdded');
+    for (let key in tempVariable) {
+      text = text.replace(tempVariable[key]['regex'], function(s) {
+        return "#"+key.toUpperCase()+"#" + s + "#"+key.toUpperCase()+"#";
+      });
+    }
+
+
+    return text;
   },
 
   actions: {
     renderModal(whichModal) {
-      this.get('renderDialog')(whichModal)
+      let modelContent = false;
+      if( whichModal in this.get('newRegexAdded') ){
+        modelContent = this.get('newRegexAdded')[whichModal]['modelText'];
+      }
+      this.get('renderDialog')(whichModal,modelContent);
     }
   }
 });

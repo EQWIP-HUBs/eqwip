@@ -230,4 +230,12 @@ body.centered-modal-showing {
   background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
   background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
 }
-
+.storyContainer i{
+  font-style: italic;
+}
+.ib-container i{
+  font-style: italic;
+}
+.ib-container b{
+  font-weight: bold;
+}
